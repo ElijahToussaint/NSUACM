@@ -3,7 +3,7 @@ require('config.php');
 ?>
 <?php
 if(!isset($_SESSION['username'])){
-  header('Location: index.php');
+  header('Location: index');
 }
 ?>
 <!DOCTYPE html>
@@ -40,7 +40,7 @@ if(!isset($_SESSION['username'])){
         $updateSql='UPDATE gallery SET title = "'.$title.'" WHERE id="'.$id.'"';
         $updateResult=mysqli_query($mysqli,$updateSql) or die(mysqli_error());
         $success='Event has been updated.';
-        header('Location: gallery.php');
+        header('Location: gallery');
       }
     }
   ?>
@@ -56,7 +56,7 @@ if(!isset($_SESSION['username'])){
     }
     ?>
     <div class="ui breadcrumb">
-      <a href="gallery.php" class="section">Gallery</a>
+      <a href="gallery" class="section">Gallery</a>
       <div class="divider"> / </div>
       <div class="active section">Edit Gallery Photo Title</div>
     </div>

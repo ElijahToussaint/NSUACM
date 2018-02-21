@@ -36,7 +36,7 @@ require('config.php');
           <p>Learn more about the NSU ACM chapter and it's eboard members.</p>
         </div>
         <div class="extra content">
-          <a href="about.php" class="ui secondary button">Learn More</a>
+          <a href="about" class="ui secondary button">Learn More</a>
         </div>
       </div>
       <div class="card">
@@ -47,7 +47,7 @@ require('config.php');
           <p>Stay updated on recent and current events regarding the NSU ACM chapter.</p>
         </div>
         <div class="extra content">
-          <a href="events.php" class="ui secondary button">Learn More</a>
+          <a href="events" class="ui secondary button">Learn More</a>
         </div>
       </div>
       <div class="card">
@@ -58,7 +58,7 @@ require('config.php');
           <p>View all projects worked on by NSU ACM chapter students.</p>
         </div>
         <div class="extra content">
-          <a href="projects.php" class="ui secondary button">Learn More</a>
+          <a href="projects" class="ui secondary button">Learn More</a>
         </div>
       </div>
     </div>

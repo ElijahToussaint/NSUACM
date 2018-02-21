@@ -3,7 +3,7 @@ require('config.php');
 ?>
 <?php
 if(!isset($_SESSION['username'])){
-  header('Location: index.php');
+  header('Location: index');
 }
 ?>
 <!DOCTYPE html>
@@ -54,7 +54,7 @@ if(!isset($_SESSION['username'])){
         $updateSql='UPDATE eboard SET name="'.$name.'", email="'.$email.'", description="'.$description.'", position="'.$position.'" WHERE id="'.$id.'"';
         $updateResult = mysqli_query($mysqli,$updateSql);
         $success = 'Information has been updated successfully';
-        header('Location: about.php');
+        header('Location: about');
       }
     }
    ?>
@@ -70,7 +70,7 @@ if(!isset($_SESSION['username'])){
     }
     ?>
     <div class="ui breadcrumb">
-      <a href="about.php" class="section">About</a>
+      <a href="about" class="section">About</a>
       <div class="divider"> / </div>
       <div class="active section"><?php echo $row['name']; ?></div>
     </div>

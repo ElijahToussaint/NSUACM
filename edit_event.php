@@ -3,7 +3,7 @@ require('config.php');
 ?>
 <?php
 if(!isset($_SESSION['username'])){
-  header('Location: index.php');
+  header('Location: index');
 }
 ?>
 <!DOCTYPE html>
@@ -65,7 +65,7 @@ if(!isset($_SESSION['username'])){
         $updateSql='UPDATE events SET name = "'.$name.'", location = "'.$location.'", start_datetime = "'.$start_datetime.'", end_datetime = "'.$end_datetime.'", description = "'.$description.'", posted_timestamp = "'.$timestamp.'" WHERE id="'.$id.'"';
         $updateResult=mysqli_query($mysqli,$updateSql) or die(mysqli_error());
         $success='Event has been updated.';
-        header('Location: events.php');
+        header('Location: events');
       }
     }
   ?>
@@ -81,7 +81,7 @@ if(!isset($_SESSION['username'])){
     }
     ?>
     <div class="ui breadcrumb">
-      <a href="events.php" class="section">Events</a>
+      <a href="events" class="section">Events</a>
       <div class="divider"> / </div>
       <div class="active section">Edit Event</div>
     </div>

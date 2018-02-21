@@ -32,11 +32,29 @@ require('config.php');
   <!-- body -->
   <div class="ui main text container">
     <div class="ui breadcrumb">
-      <a href="projects.php" class="section">Projects</a>
+      <a href="projects" class="section">Projects</a>
       <div class="divider"> / </div>
       <div class="active section"><?php echo $row['name']; ?></div>
     </div>
     <div class="ui section divider"></div>
+    <?php
+      if(isset($_SESSION['username'])){
+    ?>
+    <a href="edit_project?id=<?php echo $row['id']; ?>" class="ui small black button">
+      Edit Project
+    </a>
+    <?php
+      }
+    ?>
+    <?php
+      if(isset($_SESSION['username'])){
+    ?>
+    <a href="delete_project?id=<?php echo $row['id']; ?>" class="ui small red button">
+      Delete Project
+    </a>
+    <?php
+      }
+    ?>
     <h1 class="ui header">
       <div class="content">
         <?php echo $row['name']; ?>

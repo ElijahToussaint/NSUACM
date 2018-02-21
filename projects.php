@@ -95,7 +95,7 @@ require('config.php');
     <?php
       if(isset($_SESSION['username'])){
     ?>
-    <a href="new_project.php" class="ui small black button">
+    <a href="new_project" class="ui small black button">
       Add New Project
     </a>
     <?php
@@ -107,7 +107,7 @@ require('config.php');
       ?>
         <div class="item">
           <div class="content">
-            <a href="project.php?id=<?php echo $row['id']; ?>" class="header"><?php echo $row['name']; ?></a>
+            <a href="project?id=<?php echo $row['id']; ?>" class="header"><?php echo $row['name']; ?></a>
             <div class="meta">
               <?php $timestamp = strtotime($row['posted_timestamp']); ?>
               <span>Posted: <?php echo date("m/d/Y", $timestamp); ?> at <?php echo date("g:i a", $timestamp); ?></span>
@@ -135,7 +135,7 @@ require('config.php');
                 //Truncate string
                 $stringCut = substr($row['description'], 0, 200);
                 //Make sure it ends in a word so assassinate doesn't become ass...
-                $string = strip_tags($stringCut). "... <a href='project.php?id=".$row['id']."'>Additional Details</a>";
+                $string = strip_tags($stringCut). "... <a href='project?id=".$row['id']."'>Additional Details</a>";
                 echo '<p>'.$string.'</p>';
               }
               else
@@ -148,7 +148,7 @@ require('config.php');
               <?php
                 if(isset($_SESSION['username'])){
               ?>
-              <a href="edit_project.php?id=<?php echo $row['id']; ?>" class="ui small black button">
+              <a href="edit_project?id=<?php echo $row['id']; ?>" class="ui small black button">
                 Edit Project
               </a>
               <?php
@@ -157,7 +157,7 @@ require('config.php');
               <?php
                 if(isset($_SESSION['username'])){
               ?>
-              <a href="delete_project.php?id=<?php echo $row['id']; ?>" class="ui small red button">
+              <a href="delete_project?id=<?php echo $row['id']; ?>" class="ui small red button">
                 Delete Project
               </a>
               <?php

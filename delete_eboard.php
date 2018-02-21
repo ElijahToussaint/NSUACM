@@ -3,7 +3,7 @@ require('config.php');
 ?>
 <?php
 if(!isset($_SESSION['username'])){
-  header('Location: index.php');
+  header('Location: index');
 }
 ?>
 <!DOCTYPE html>
@@ -35,7 +35,7 @@ if(!isset($_SESSION['username'])){
     $deleteSql = "DELETE FROM eboard WHERE id='".$id."'";
     if(mysqli_query($mysqli,$deleteSql)){
       $success = "The student was successfully deleted.";
-      header("Location: about.php");
+      header("Location: about");
     }
     else {
       $error = "An error occured while deleting the student.";
@@ -54,7 +54,7 @@ if(!isset($_SESSION['username'])){
     }
     ?>
     <div class="ui breadcrumb">
-      <a href="about.php" class="section">About</a>
+      <a href="about" class="section">About</a>
       <div class="divider"> / </div>
       <div class="active section"><?php echo $row['name']; ?></div>
     </div>
@@ -66,7 +66,7 @@ if(!isset($_SESSION['username'])){
           <input type="hidden" name="confirm" value="true">
         </div>
         <input type="submit" class="ui small black button" value="Yes">
-        <a href="about.php" class="ui small red button">No</a>
+        <a href="about" class="ui small red button">No</a>
       </div>
     </form>
   </div>

@@ -31,7 +31,7 @@ require('config.php');
     <?php
       if(isset($_SESSION['username'])){
     ?>
-    <a href="upload_gallery.php" class="ui small black button">Upload from computer</a>
+    <a href="upload_gallery" class="ui small black button">Upload from computer</a>
     <br/><br/>
     <?php
       }
@@ -54,8 +54,8 @@ require('config.php');
             if(isset($_SESSION['username'])){
           ?>
           <div class="extra content">
-            <a href="edit_gallery.php?id=<?php echo $row['id']; ?>" class="ui small black button">Edit</a>
-            <a href="delete_gallery.php?id=<?php echo $row['id']; ?>" class="ui small red button">Delete</a>
+            <a href="edit_gallery?id=<?php echo $row['id']; ?>" class="ui small black button">Edit</a>
+            <a href="delete_gallery?id=<?php echo $row['id']; ?>" class="ui small red button">Delete</a>
           </div>
           <?php
             }

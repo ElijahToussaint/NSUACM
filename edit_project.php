@@ -49,7 +49,7 @@ if(!isset($_SESSION['username'])){
         $updateSql='UPDATE projects SET name = "'.$name.'", description = "'.$description.'", status = "'.$status.'", posted_timestamp = "'.$timestamp.'" WHERE id="'.$id.'"';
         $updateResult=mysqli_query($mysqli,$updateSql) or die(mysqli_error());
         $success='Project has been updated.';
-        header('Location: projects.php');
+        header('Location: projects');
       }
     }
   ?>
@@ -65,7 +65,7 @@ if(!isset($_SESSION['username'])){
     }
     ?>
     <div class="ui breadcrumb">
-      <a href="projects.php" class="section">Projects</a>
+      <a href="projects" class="section">Projects</a>
       <div class="divider"> / </div>
       <div class="active section">Edit Project</div>
     </div>

@@ -3,7 +3,7 @@ require('config.php');
 ?>
 <?php
 if(!isset($_SESSION['username'])){
-  header('Location: index.php');
+  header('Location: index');
 }
 ?>
 <!DOCTYPE html>
@@ -78,7 +78,7 @@ if(!isset($_SESSION['username'])){
           $success = "Eboard member has been added.";
           $sql='INSERT INTO eboard (name, avatar, email, description, position) VALUES ("'.$name.'", "'.$manipulator.'", "'.$email.'", "'.$description.'", "'.$position.'")';
           $result = mysqli_query($mysqli,$sql);
-          header('Location: about.php');
+          header('Location: about');
         } else {
           $error = "Sorry, there was an error uploading your file.";
         }
@@ -98,7 +98,7 @@ if(!isset($_SESSION['username'])){
     }
     ?>
     <div class="ui breadcrumb">
-      <a href="about.php" class="section">About</a>
+      <a href="about" class="section">About</a>
       <div class="divider"> / </div>
       <div class="active section">New Eboard Member</div>
     </div>
@@ -107,7 +107,7 @@ if(!isset($_SESSION['username'])){
       <div class="ui form">
         <div class="field">
           <label>Name</label>
-          <input type="text" name='name' required />
+          <input type="text" name="name" required />
         </div>
         <div class="field">
           <label>Upload Profile Image</label>
@@ -116,15 +116,15 @@ if(!isset($_SESSION['username'])){
         </div>
         <div class="field">
           <label>Position</label>
-          <input type="text" name='position' required />
+          <input type="text" name="position" required />
         </div>
         <div class="field">
           <label>Email</label>
-          <input type="email" name='email' required />
+          <input type="email" name="email" required />
         </div>
         <div class="field">
           <label>Description</label>
-          <textarea wrap="hard" name='description' required></textarea>
+          <textarea wrap="hard" name="description" required></textarea>
         </div>
         <input type="submit" class="ui small black button" name='submit' value="Submit" />
       </div>

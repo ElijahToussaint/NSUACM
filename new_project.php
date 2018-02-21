@@ -3,7 +3,7 @@ require('config.php');
 ?>
 <?php
 if(!isset($_SESSION['username'])){
-  header('Location: index.php');
+  header('Location: index');
 }
 ?>
 <!DOCTYPE html>
@@ -45,7 +45,7 @@ if(!isset($_SESSION['username'])){
       $sql='INSERT INTO projects (name, description, status, posted_timestamp) VALUES ("'.$name.'", "'.$description.'", "'.$status.'", "'.$timestamp.'")';
       $result=mysqli_query($mysqli,$sql) or die(mysqli_error());
       $success='Project has been added successfully.';
-      header('Location: projects.php');
+      header('Location: projects');
     }
   }
   ?>
@@ -61,7 +61,7 @@ if(!isset($_SESSION['username'])){
     }
     ?>
     <div class="ui breadcrumb">
-      <a href="projects.php" class="section">Projects</a>
+      <a href="projects" class="section">Projects</a>
       <div class="divider"> / </div>
       <div class="active section">New Project</div>
     </div>

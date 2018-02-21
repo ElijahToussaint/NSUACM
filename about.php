@@ -39,7 +39,7 @@ require('config.php');
             <?php
             if(isset($_SESSION['username'])){
               ?>
-              <a href="photo_eboard.php?id=<?php echo $row['id']; ?>" class="ui black left corner label">
+              <a href="photo_eboard?id=<?php echo $row['id']; ?>" class="ui black left corner label">
                 <i class="photo link icon"></i>
               </a>
               <?php
@@ -48,7 +48,7 @@ require('config.php');
             <img src="<?php echo $row['avatar']; ?>">
           </div>
           <div class="content">
-            <h2 class="ui header truncate"><a href="eboard.php?id=<?php echo $row['id']; ?>"><?php echo $row['name']; ?></a>
+            <h2 class="ui header truncate"><a href="eboard?id=<?php echo $row['id']; ?>"><?php echo $row['name']; ?></a>
               <div class="sub header truncate"><?php echo $row['position']; ?></div>
             </h2>
           </div>
@@ -56,8 +56,8 @@ require('config.php');
           if(isset($_SESSION['username'])){
             ?>
             <div class="extra content">
-              <a href="edit_eboard.php?id=<?php echo $row['id']; ?>" class="ui small black button">Edit</a>
-              <a href="delete_eboard.php?id=<?php echo $row['id']; ?>" class="ui small red button">Delete</a>
+              <a href="edit_eboard?id=<?php echo $row['id']; ?>" class="ui small black button">Edit</a>
+              <a href="delete_eboard?id=<?php echo $row['id']; ?>" class="ui small red button">Delete</a>
             </div>
             <?php
           }
@@ -69,7 +69,7 @@ require('config.php');
       <?php
       if(isset($_SESSION['username'])){
         ?>
-        <a href="new_eboard.php" class="card">
+        <a href="new_eboard" class="card">
           <div class="image">
             <img src="assets/blank.jpg">
           </div>

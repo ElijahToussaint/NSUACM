@@ -3,7 +3,7 @@ require('config.php');
 ?>
 <?php
 if(!isset($_SESSION['username'])){
-  header('Location: index.php');
+  header('Location: index');
 }
 ?>
 <!DOCTYPE html>
@@ -67,7 +67,7 @@ if(!isset($_SESSION['username'])){
         $success = "The file ". basename( $_FILES['avatar']['name'])." has been uploaded.";
         $updateSql='UPDATE eboard SET avatar="'.$manipulator.'" WHERE id="'.$id.'"';
         $updateResult = mysqli_query($mysqli,$updateSql);
-        header('Location: about.php');
+        header('Location: about');
       } else {
         $error = "Sorry, there was an error uploading your file.";
       }
@@ -86,7 +86,7 @@ if(!isset($_SESSION['username'])){
     }
     ?>
     <div class="ui breadcrumb">
-      <a href="about.php" class="section">About</a>
+      <a href="about" class="section">About</a>
       <div class="divider"> / </div>
       <div class="active section"><?php echo $row['name']; ?></div>
     </div>

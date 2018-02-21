@@ -3,7 +3,7 @@ require('config.php');
 ?>
 <?php
 if(!isset($_SESSION['username'])){
-  header('Location: index.php');
+  header('Location: index');
 }
 ?>
 <!DOCTYPE html>
@@ -62,7 +62,7 @@ if(!isset($_SESSION['username'])){
         $sql='INSERT INTO events (name, location, start_datetime, end_datetime, description, posted_timestamp) VALUES ("'.$name.'", "'.$location.'", "'.$start_datetime.'", "'.$end_datetime.'", "'.$description.'", "'.$timestamp.'")';
         $result=mysqli_query($mysqli,$sql) or die(mysqli_error());
         $success='Event has been added successfully.';
-        header('Location: events.php');
+        header('Location: events');
       }
     }
   ?>
@@ -78,7 +78,7 @@ if(!isset($_SESSION['username'])){
     }
     ?>
     <div class="ui breadcrumb">
-      <a href="events.php" class="section">Events</a>
+      <a href="events" class="section">Events</a>
       <div class="divider"> / </div>
       <div class="active section">New Event</div>
     </div>

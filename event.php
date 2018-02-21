@@ -2,10 +2,10 @@
 require('config.php');
 ?>
 <?php
-  $id = $_GET['id'];
-  $sql='SELECT * FROM events WHERE id='.$id.'';
-  $result=mysqli_query($mysqli,$sql) or die(mysqli_error());
-  $row=mysqli_fetch_array($result);
+$id = $_GET['id'];
+$sql='SELECT * FROM events WHERE id='.$id.'';
+$result=mysqli_query($mysqli,$sql) or die(mysqli_error());
+$row=mysqli_fetch_array($result);
 ?>
 <!DOCTYPE html>
 <html>
@@ -33,11 +33,23 @@ require('config.php');
 
   <div class="ui main text container">
     <div class="ui breadcrumb">
-      <a href="events.php" class="section">Events</a>
+      <a href="events" class="section">Events</a>
       <div class="divider"> / </div>
       <div class="active section"><?php echo $row['name']; ?></div>
     </div>
     <div class="ui section divider"></div>
+    <?php
+    if(isset($_SESSION['username'])){
+      ?>
+      <a href="edit_event?id=<?php echo $row['id']; ?>" class="ui small black button">
+        Edit Event
+      </a>
+      <a href="delete_event?id=<?php echo $row['id']; ?>" class="ui small red button">
+        Delete Event
+      </a>
+      <?php
+    }
+    ?>
     <h1 class="ui header">
       <div class="content">
         <?php echo $row['name']; ?>

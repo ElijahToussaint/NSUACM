@@ -44,7 +44,7 @@ require('config.php');
     else {
       $_SESSION['username'] = $inputUsername;
       $success = 'You have successfully logged in.';
-      header('Location: index.php');
+      header('Location: index');
     }
   }
   ?>

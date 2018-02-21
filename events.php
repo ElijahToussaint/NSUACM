@@ -95,7 +95,7 @@ require('config.php');
     <?php
       if(isset($_SESSION['username'])){
     ?>
-    <a href="new_event.php" class="ui small black button">
+    <a href="new_event" class="ui small black button">
       Add New Event
     </a>
     <?php
@@ -107,7 +107,7 @@ require('config.php');
         ?>
         <div class="item">
           <div class="content">
-            <a href="event.php?id=<?php echo $row['id']; ?>" class="header"><?php echo $row['name']; ?></a>
+            <a href="event?id=<?php echo $row['id']; ?>" class="header"><?php echo $row['name']; ?></a>
             <div class="meta">
               <?php $timestamp = strtotime($row['posted_timestamp']); ?>
               <span>Posted: <?php echo date("m/d/Y", $timestamp); ?> at <?php echo date("g:i a", $timestamp); ?></span>
@@ -119,7 +119,7 @@ require('config.php');
                 //Truncate string
                 $stringCut = substr($row['description'], 0, 200);
                 //Make sure it ends in a word so assassinate doesn't become ass...
-                $string = strip_tags($stringCut). "... <a href='event.php?id=".$row['id']."'>Additional Details</a>";
+                $string = strip_tags($stringCut). "... <a href='event?id=".$row['id']."'>Additional Details</a>";
                 echo '<p>'.$string.'</p>';
               }
               else
@@ -132,10 +132,10 @@ require('config.php');
               if(isset($_SESSION['username'])){
             ?>
             <div class="extra">
-              <a href="edit_event.php?id=<?php echo $row['id']; ?>" class="ui small black button">
+              <a href="edit_event?id=<?php echo $row['id']; ?>" class="ui small black button">
                 Edit Event
               </a>
-              <a href="delete_event.php?id=<?php echo $row['id']; ?>" class="ui small red button">
+              <a href="delete_event?id=<?php echo $row['id']; ?>" class="ui small red button">
                 Delete Event
               </a>
             </div>

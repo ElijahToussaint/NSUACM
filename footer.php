@@ -11,12 +11,12 @@
           <?php
           if(!isset($_SESSION['username'])){
             ?>
-            <a href="login.php" class="item">Webmaster Login</a>
+            <a href="login" class="item">Webmaster Login</a>
             <?php
           }
           else{
             ?>
-            <a href="logout.php" class="item">Logout</a>
+            <a href="logout" class="item">Logout</a>
             <?php
           }
           ?>

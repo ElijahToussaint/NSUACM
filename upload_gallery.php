@@ -3,7 +3,7 @@ require('config.php');
 ?>
 <?php
 if(!isset($_SESSION['username'])){
-  header('Location: index.php');
+  header('Location: index');
 }
 ?>
 <!DOCTYPE html>
@@ -43,7 +43,7 @@ if(!isset($_SESSION['username'])){
 				$sql = "INSERT INTO gallery (title, image) VALUES ('".$_POST['title']."', '".$image_name."')";
 				$result = mysqli_query($mysqli,$sql) or die(mysqli_error());
 				$success = 'Image uploaded successfully.';
-				header('Location: gallery.php');
+				header('Location: gallery');
 			}
 			else {
 				$error = 'There was a problem uploading the image.';
@@ -63,7 +63,7 @@ if(!isset($_SESSION['username'])){
 		}
 		?>
 		<div class="ui breadcrumb">
-			<a href="gallery.php" class="section">Gallery</a>
+			<a href="gallery" class="section">Gallery</a>
 			<div class="divider"> / </div>
 			<div class="active section">Upload to Gallery</div>
 		</div>

@@ -32,7 +32,7 @@ require('config.php');
   <!-- body -->
   <div class="ui main text container">
     <div class="ui breadcrumb">
-      <a href="about.php" class="section">About</a>
+      <a href="about" class="section">About</a>
       <div class="divider"> / </div>
       <div class="active section"><?php echo $row['name']; ?></div>
     </div>
